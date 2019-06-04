@@ -1,19 +1,15 @@
 
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-12">
         <% @todos.each do |todo|%>
             <div class="card card-body bg-light">
-                <%=todo.description%>
-                <%=todo.completed%>
+               <p>description: <%=todo.description%> </p>   
+                <p>completed: <%=todo.completed%>  </p>   
                 <%= link_to  "Show", todo %>
                 <%= link_to  "Edit", edit_todo_path(todo) %>
                 <%= link_to  "Delete", todo, method: :delete%>
-                <%= link_to  "Completed", complete_todo_path(todo), method: :post%>
-
-
-
+                <%= link_to  "Completed", complete_todo_path(todo), method: :post, class:"btn btn-primary" %>
             </div>
         <% end %>
     </div>
 </div>
-<%= link_to  "NewToDo", new_todo_path %>

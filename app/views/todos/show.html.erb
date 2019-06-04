@@ -1,3 +1,5 @@
-<%=@todo.description%>
-<%=@todo.completed%>
-<%= link_to  "BACK", todos_path %>
+      <div class="card card-body bg-light">
+               <p>description: <%=@todo.description%> </p>   
+                <p>completed: <%=@todo.completed%>  </p>  
+                <%= link_to  "BACK", todos_path, class:"btn btn-primary" %> 
+      </div>
