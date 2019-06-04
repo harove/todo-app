@@ -1,0 +1,16 @@
+
+<div class="row">
+    <div class="col-md-6">
+        <% @todo.each do |todo|%>
+            <div class="card card-body bg-light">
+                <%=todo.description%>
+                <%=todo.completed%>
+                <%= link_to  "Show", todo %>
+                <%= link_to  "Edit", edit_todo_path(todo) %>
+                <%= link_to  "Delete", todo, method: :delete%>
+                
+            </div>
+        <% end %>
+    </div>
+</div>
+<%= link_to  "NewToDo", new_todo_path %>
